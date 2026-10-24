@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disclosure Version Archive: Version Control for Disclosure and Consent Wording</title>
+<meta name="description" content="Version control for disclosure and consent wording in your browser: effective dates, tamper evident hashes, word diffs and lookup by date.">
+<meta name="keywords" content="disclosure version control, consent wording archive, disclosure diff tool, effective date lookup, tamper evident manifest">
+<meta name="author" content="Amir Hussain">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://aamirtechs.github.io/disclosure-version-archive/">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta name="theme-color" content="#0b1f3a">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Disclosure Version Archive: Version Control for Disclosure and Consent Wording">
+<meta property="og:description" content="Version control for disclosure and consent wording in your browser: effective dates, tamper evident hashes, word diffs and lookup by date.">
+<meta property="og:url" content="https://aamirtechs.github.io/disclosure-version-archive/">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Disclosure Version Archive">
+<meta name="twitter:description" content="Version control for disclosure and consent wording in your browser: effective dates, tamper evident hashes, word diffs and lookup by date.">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "SoftwareApplication", "name": "Disclosure Version Archive", "applicationCategory": "BusinessApplication", "operatingSystem": "Any", "offers": {"@type": "Offer", "price": "0", "priceCurrency": "USD"}, "author": {"@type": "Person", "name": "Amir Hussain", "url": "https://aamirtechs.com"}, "url": "https://aamirtechs.github.io/disclosure-version-archive/"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Plus+Jakarta+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<style>:root{--navy:#0b1f3a;--navy2:#122c50;--gold:#d4a72c;--ink:#16233a;--muted:#5a6a84;--line:#e3e9f2;--bg:#f6f8fb;--card:#ffffff}*{box-sizing:border-box}body{margin:0;font-family:'Plus Jakarta Sans',sans-serif;background:var(--bg);color:var(--ink)}header{background:linear-gradient(135deg,var(--navy),var(--navy2));color:#fff;padding:44px 20px 34px;text-align:center}header h1{font-family:Sora,sans-serif;font-size:2.2rem;margin:0 0 10px}header h1 span{color:var(--gold)}header p{max-width:720px;margin:0 auto 16px;opacity:.92}.stats{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}.stats span{border:1px solid rgba(255,255,255,.35);border-radius:999px;padding:5px 14px;font-size:.85rem}main{max-width:1020px;margin:0 auto;padding:24px 16px 40px}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px;box-shadow:0 6px 24px rgba(11,31,58,.06)}label{font-weight:700;display:block;margin:14px 0 6px}input[type=text],input[type=date],input[type=number],input[type=file],select,textarea{width:100%;padding:10px;border:1px solid var(--line);border-radius:10px;font:inherit}.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}.btn-run{background:var(--gold);color:var(--navy);border:0;border-radius:10px;padding:12px 22px;cursor:pointer;font:inherit;font-weight:800;margin-top:16px}.btn-sec{background:var(--navy);color:#fff;border:0;border-radius:10px;padding:10px 18px;cursor:pointer;font:inherit;margin:8px 6px 0 0}.privacy{color:var(--muted);font-size:.9rem;margin-top:10px}table{width:100%;border-collapse:collapse;margin-top:10px;font-size:.92rem}td,th{border:1px solid var(--line);padding:7px 9px;text-align:left;vertical-align:top}section.features{background:#fff;border:1px solid var(--line);border-radius:16px;padding:20px 24px;margin-top:20px}footer{background:var(--navy);color:#dbe4f0;text-align:center;padding:26px 16px;font-size:.92rem}footer a{color:var(--gold)}.msg{margin-top:12px;white-space:pre-wrap;font-weight:700}pre.out{white-space:pre-wrap;word-break:break-word;background:#f2f5fa;border:1px solid var(--line);border-radius:10px;padding:12px;font-size:.88rem}.pass{color:#137333;font-weight:700}.warn{color:#9a6b00;font-weight:700}.fail{color:#b3261e;font-weight:700}.add{background:#dff5e3}.del{background:#fde2e2;text-decoration:line-through}</style>
+</head>
+<body>
+
+<header>
+<h1>Disclosure Version <span>Archive</span></h1>
+<p>Version control for the words consumers actually saw: disclosures and consent wording with effective dates, diffs and retrieval by date.</p>
+<div class="stats"><span>Free</span><span>100% in your browser</span><span>No sign-up</span></div>
+</header>
+<main>
+<div class="card">
+<h3>Add a version</h3>
+<div class="cols">
+<div><label for="formName">Form name</label><input type="text" id="formName" value="main-funnel"></div>
+<div><label for="verLabel">Version label</label><input type="text" id="verLabel" placeholder="v3"></div>
+<div><label for="effFrom">Effective from</label><input type="date" id="effFrom"></div>
+<div><label for="effTo">Effective to (blank = current)</label><input type="date" id="effTo"></div>
+</div>
+<label for="plainText">Plain text of the disclosure (sample wording only in demos)</label>
+<textarea id="plainText" rows="4" placeholder="Paste the disclosure text"></textarea>
+<label for="changeNote">Change note</label>
+<input type="text" id="changeNote" placeholder="What changed and why">
+<button class="btn-sec" id="add">Add version</button>
+<button class="btn-sec" id="sample">Load sample versions</button>
+<h3>Archive tools</h3>
+<label for="importFile">Import archive JSON</label>
+<input type="file" id="importFile" accept=".json,application/json">
+<button class="btn-sec" id="exportBtn">Export archive JSON</button>
+<h3>Lookup by date</h3>
+<div class="cols">
+<div><label for="lookupForm">Form name</label><input type="text" id="lookupForm" value="main-funnel"></div>
+<div><label for="lookupDate">Date</label><input type="date" id="lookupDate"></div>
+</div>
+<button class="btn-run" id="lookupBtn">Look up version in effect</button>
+<h3>Diff two versions</h3>
+<div class="cols">
+<div><label for="diffA">Older version label</label><input type="text" id="diffA" placeholder="v1"></div>
+<div><label for="diffB">Newer version label</label><input type="text" id="diffB" placeholder="v2"></div>
+</div>
+<button class="btn-sec" id="diffBtn">Show diff</button>
+<p class="privacy">Runs 100% in your browser. Your files never leave this device.</p>
+<p>Data is stored only in page memory plus the JSON export you download. There is no server. Refreshing the page clears the in-memory archive, so export before you leave.</p>
+<div class="msg" id="msg" role="status"></div>
+<div id="lookupOut"></div>
+<div id="diffOut"></div>
+<div id="manifest"></div>
+</div>
+<section class="features">
+<h2>How it works</h2>
+<ul>
+<li>Add each disclosure version with its effective dates, then close the previous version so ranges do not overlap.</li>
+<li>The manifest hash makes an archived version tamper-evident: re-import the JSON and the hash should match.</li>
+<li>Use lookup by date when a question arrives about an older lead: you get the wording that was in effect then, not todays page.</li>
+<li>Sample wording in this demo is neutral text written for the demo. It is sample wording, not real legal text.</li>
+</ul>
+</section>
+</main>
+<footer>
+<p>Built by Amir Hussain, operations manager and founder of <a href="https://aamirtechs.com" target="_blank" rel="noopener">AamirTechs: operations, customer support and e-commerce services</a>.</p>
+<p><a href="https://github.com/aamirtechs" target="_blank" rel="noopener">More open source tools on GitHub</a></p>
+</footer>
+
+<script src="src/logic.js"></script>
+<script>
+const $=(id)=>document.getElementById(id);let versions=[];
+function esc(s){return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function render(){
+ const v=DisclosureVersionArchive.validateArchive(versions);
+ let h="<h3>Manifest ("+versions.length+" versions)</h3>";
+ if(!v.valid)h+="<p class='fail'>Validation issues: "+v.issues.map(i=>esc(i.message)).join("; ")+"</p>";
+ h+="<table><tr><th>Form</th><th>Version</th><th>From</th><th>To</th><th>Hash</th><th>Change note</th></tr>"+v.manifest.map(m=>"<tr><td>"+esc(m.form_name)+"</td><td>"+esc(m.version_label)+"</td><td>"+esc(m.effective_from)+"</td><td>"+esc(m.effective_to||"current")+"</td><td>"+esc(m.hash)+"</td><td>"+esc(m.change_note)+"</td></tr>").join("")+"</table>";
+ $("manifest").innerHTML=h;
+}
+$("sample").addEventListener("click",()=>{versions=[
+ {form_name:"main-funnel",version_label:"v1",effective_from:"2026-01-01",effective_to:"2026-06-30",plain_text:"Sample wording: we may contact you about your enquiry. This is sample wording, not real legal text.",change_note:"Initial sample wording"},
+ {form_name:"main-funnel",version_label:"v2",effective_from:"2026-07-01",effective_to:"",plain_text:"Sample wording: we may contact you by phone about your enquiry. This is sample wording, not real legal text.",change_note:"Added by phone"}];render();$("msg").textContent="Loaded 2 sample versions.";});
+$("add").addEventListener("click",()=>{try{versions.push(DisclosureVersionArchive.normalizeVersion({form_name:$("formName").value,version_label:$("verLabel").value,effective_from:$("effFrom").value,effective_to:$("effTo").value,plain_text:$("plainText").value,change_note:$("changeNote").value}));render();$("msg").textContent="Version added.";}catch(e){$("msg").textContent=e.message;}});
+$("lookupBtn").addEventListener("click",()=>{const r=DisclosureVersionArchive.lookupVersion(versions,$("lookupForm").value,$("lookupDate").value);$("lookupOut").innerHTML=r?"<h3>In effect</h3><p><strong>"+esc(r.version_label)+"</strong> hash "+esc(r.hash)+"</p><pre class='out'>"+esc(r.plain_text)+"</pre>":"<p>No version in effect for that form and date.</p>";});
+$("diffBtn").addEventListener("click",()=>{const a=versions.find(v=>v.version_label===$("diffA").value);const b=versions.find(v=>v.version_label===$("diffB").value);if(!a||!b){$("msg").textContent="Pick two version labels that exist.";return;}const segs=DisclosureVersionArchive.diffWords(a.plain_text,b.plain_text);$("diffOut").innerHTML="<h3>Diff</h3><p>"+segs.map(s=>"<span class='"+(s.type==="added"?"add":s.type==="removed"?"del":"")+"'>"+esc(s.text)+"</span>").join(" ")+"</p>";});
+function dl(name,text){const a=document.createElement("a");a.href=URL.createObjectURL(new Blob([text],{type:"application/json"}));a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(a.href),4000);}
+$("exportBtn").addEventListener("click",()=>dl("disclosure-archive.json",DisclosureVersionArchive.exportArchive(versions)));
+$("importFile").addEventListener("change",async(e)=>{if(e.target.files[0]){try{versions=DisclosureVersionArchive.importArchive(await e.target.files[0].text());render();$("msg").textContent="Archive imported.";}catch(err){$("msg").textContent="Import error: "+err.message;}}});
+render();
+</script>
+</body></html>
